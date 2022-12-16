@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="static/styles/root.css">
+    <title>shopcimu.com</title>
+</head>
+<!-- cal_test_59ec704a9acf5bdf89b9ed03ef62c607 -->
+
+<body>
+    {% include 'Templates/navbar.html' %}
+    <div class="content">
+        <h1>Schedule with {{company_name}}!</h1>
+        <form method='POST' style="width:100%;height:100%;">
+            {{ form.hidden_tag() }}
+            {{form.tailorid(value=tailorid)}}
+            {{ form.tailorname.label }}
+            {{ form.tailorname(value=company_name) }}
+            <br>
+            <br>
+            {{ form.description.label }}
+            {{ form.description() }}
+            <br>
+            {{form.submit()}}
+            <!-- <submit name="submit" type="submit" value="Submit"> Submit</submit> -->
+        </form>
+    </div>
+</body>
+
+</html>
+
+</html>

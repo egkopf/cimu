@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>shopcimu.com</title>
+        <link rel="stylesheet" type="text/css" href="static/styles/root.css">
+        <link rel="stylesheet" type="text/css" href="static/styles/orders.css">
+    </head>
+
+    <body>
+        {% include 'Templates/navbar.html' %}
+        <div class="content">
+            <h1 style="color:#009900;">Welcome back {{name}}!</h1>
+            {% if current_user.UserType == "tailor" %}
+            Here are the current orders that customers have placed with you
+            <div class="table">
+            {% for order in orders %}
+            <div class="row">
+                <div class="tailor-info">
+                    <p style="display:none;">{{order[4]}}</p>
+                    <h3>{{order[0]}}</h3>
+                    <p>{{order[1]}}</p>
+
+                </div>
+                <div class="tailor-info">
+                    <p> <b>Order Placed:&nbsp;</b> {{order[3]}}</p>
+                    <p><b>Status:&nbsp;</b>{{order[2]}}</p>
+                </div>
+                <div class="tailor-info2">
+                {% if order[2] == "PENDING" %}
+                    <button onclick="window.location.href='orderupdate?orderid={{order[4]}}&buttonAction=accept'">Accept</button>
+                    <button onclick="window.location.href='orderupdate?orderid={{order[4]}}&buttonAction=decline'">Deny</button>
+                {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% if current_user.UserType == "customer" %}
+            Here are the current orders that you have placed.
+            <div class="table">
+                    {% for order in orders %}
+                    <div class="row">
+                        <p style="display:none;">{{order[4]}}</p>
+                        <div class="tailor-info">
+                            <h3>{{order[0]}}</h3>
+                            <p>{{order[1]}}</p>
+                        </div>
+                        <div class="tailor-info">
+                            <p> <b>Order Placed:&nbsp;</b> {{order[3]}}</p>
+                            <p><b>Status:&nbsp;</b> {{order[2]}}</p>
+                        </div>
+                        <div style="tailor-info2">
+                            {% if order[5] == "PENDING" %}
+                            <p>buttons</p>
+                            { else }
+                            <p>no buttons</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    </body> 
+    {% include 'Templates/footer.html' %}
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="static/styles/root.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/database.css">
+    <title>shopcimu.com</title>
+</head>
+
+<body>
+    {% include 'Templates/navbar.html' %}
+    <div class="hero-image">
+        <div class="search-container">
+            <div class="search-bar">
+                <div class="search-function-container">
+                    <label type="text" style="color:#F9F8BE; font-size:larger">Tailor</label>
+                    <input type="text" name="company" data-name="Your name" placeholder="Local Tailor"
+                        id="company" value="{{company}}">
+                </div>
+                <div class="search-function-container">  
+                    <label type="text" style="color:#F9F8BE; font-size:larger">Zipcode</label>
+                    <input type="text" name="zipcode" placeholder="06511" id="zipcode"
+                        value="{{zipcode}}">
+                </div>
+                <div class="search-function-container">  
+                    <label type="text" style="color:#F9F8BE; font-size:larger">Rating</label>
+                    <input type="text" name="rating" id="rating" value="{{rating}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="title">Find a Tailor</div>
+        <div class="searchRes" id="searchRes"></div>
+        <br>
+        <br>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        'use strict';
+
+        function handleResponse(response) {
+            $('#searchRes').html(response);
+        }
+
+        let request = null;
+
+        function getResults() {
+            let company = $('#company').val(); // read the input from the author field
+            let zipcode = $('#zipcode').val(); // read the input from the author field
+            let rating = $('#rating').val(); // read the input from the author field
+
+
+
+            // alert(tailorInput)
+
+            let url = '/searchresults?'
+            url += 'company=' + company
+            url += '&zipcode=' + zipcode
+            url += '&rating=' + rating
+
+            if (request != null)
+                request.abort();
+
+            request = $.ajax({ // display "resultsParagraph" (table)
+                type: 'GET',
+                url: url,
+                success: handleResponse
+            });
+        }
+
+
+        function setup() {
+            $('#company').on('input', getResults);
+            $('#zipcode').on('input', getResults);
+            $('#rating').on('input', getResults);
+
+            // $('body').on('click', 'tr', function () {
+            //     // let tailor = $(this).eq(0).attr('com');
+            //     // let num = $(this).eq(0).attr('num');
+            //     let tailorid = $(this).find("td.timezone").text()
+            //     let url = '/schedule?tailor=' + tailorid
+
+            //     if (request != null)
+            //         request.abort();
+
+            //     request = $.ajax({ // display "resultsParagraph" (table)
+            //         type: 'GET',
+            //         url: url,
+            //         tailorid: tailorid,
+            //         success: handleResponse
+            //     });
+            //     //$('tbody tr').removeClass('selected');
+            //     //$(this).addClass('selected'); // these two lines handle selected row of table
+
+            //     //let imagepath = $(this).eq(0).attr('imagefile');
+            //     //let imageElement = '<img src="' + imagepath + '" height="200">';
+            //     //$('#ImageLocation').html(imageElement);
+            // });
+        }
+
+        $('document').ready(setup);
+
+    </script>
+    {% include 'Templates/footer.html' %}
+</body>

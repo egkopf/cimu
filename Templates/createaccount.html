@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="login to shopcimu.com">
+    <link rel="stylesheet" type="text/css" href="static/styles/root.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/login-page.css">
+    <title>shopcimu.com</title>
+</head>
+
+<body>
+    <!-- {% include 'Templates/navbar.html' %} -->
+    <div class="main-frame">
+        <div class="main-rectangle">
+            <div class="interaction-and-logo">
+                <div class="logo">
+                    <a href="index">
+                        <img src="/static/images/cimu_full_logo.png" alt="logo-yellow" width="80%"
+                            style="max-width: 218px; max-height: 100px">
+                    </a>
+                </div>
+                <div class="interaction-zone">
+                    <form method='POST' style="width:100%;height:100%;">
+                        <span class="sign-in-label">Create an Account</span>
+                        {{ errmsg }}
+                        {{ form.hidden_tag() }}
+                        {{ form.name.label }}
+                        {{ form.name() }}
+                        <br>
+                        <br>
+                        {{ form.email.label }}
+                        {{ form.email() }}
+                        <br>
+                        <br>
+                        {{form.userType.label}}
+                        {{form.userType()}}
+                        <br>
+                        <br>
+                        {{form.password.label}}
+                        {{form.password() }}
+                        <br>
+                        <br>
+                        {{form.confirmPassword.label}}
+                        {{form.confirmPassword() }}
+                        <br>
+                        <br>
+                        <br>
+                        {{ form.submit() }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'Templates/footer.html' %}
+</body>
+
+</html>

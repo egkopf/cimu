@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="static/styles/root.css">
+    <title>shopcimu.com</title>
+</head>
+
+<body>
+    {% include 'Templates/navbar.html' %}
+    <div class="content" style="background-color:#1E4621;">
+        <form action="/tailorpage" method="post">
+            <div class="title" style="color:rgba(249, 248, 190, 1);">Join our Tailoring Community</div>
+            <br>
+            <br>
+            <label type="text" style="color:rgba(249, 248, 190, 1);">Your Company Name </label>
+            <input class="field" name="company" data-name="company" placeholder="John's Tailors" id="company"
+                value="{{company}}" />
+            <br>
+            <br>
+            <label type="text" style="color:rgba(249, 248, 190, 1);">Your Website</label>
+            <input class="field" name="url" data-name="url" placeholder="www.valentinotailors.com" id="url"
+                value="{{number}}" />
+            <br>
+            <br>
+            <label type="text" style="color:rgba(249, 248, 190, 1);">Your Phone Number</label>
+            <input class="field" name="number" data-name="number" placeholder="2034539392" id="company"
+                value="{{number}}" />
+            <br>
+            <br>
+            <label type="text" style="color:rgba(249, 248, 190, 1);">Your Company Address</label>
+            <input class="field" name="address" data-name="address" placeholder="98 Storrow Drive, New Haven, CT"
+                id="company" value="{{address}}" />
+            <br>
+            <br>
+            <button type="submit" style="width:100%;">Submit</button>
+        </form>
+
+    </div>
+    {% include 'Templates/footer.html' %}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        'use strict';
+
+        function handleResponse(response) {
+            $('#searchRes').html(response);
+        }
+
+        let request = null;
+
+    </script>
+
+</body>
+
+</html>

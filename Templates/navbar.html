@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="static/styles/root.css">
+<link rel="stylesheet" type="text/css" href="static/styles/navbar.css">
+
+<nav class="navbar navbar-expand-md" aria-label="navbar">
+  <div class="container-fluid">
+    <div class="header_logo">
+      <a href="index" class="header_logo_white">
+        <img src="/static/images/Cimu logo yellow.png" alt="logo-yellow" width="80%"
+          style="max-width: 218px; max-height: 100px">
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars"
+      aria-controls="navbars" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbars">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="about" style="color: rgba(249, 248, 190, 1);text-decoration-line:none ">About </a>
+        </li>
+        {% if current_user.UserType == "customer" %}
+
+        <li class="nav-item">
+          <a class="nav-link" href="database" style="color: rgba(249, 248, 190, 1);text-decoration-line:none ">Find a
+            Tailor </a>
+        </li>
+
+        {% endif %}
+
+        {% if (current_user.UserType == "tailor") or (current_user.UserType == "customer") %}
+        <li class="nav-item">
+          <a class="nav-link" href="orders"
+            style="color: rgba(249, 248, 190, 1);text-decoration-line:none ">Orders</a>
+        </li>
+        
+        {% endif %}
+
+          <li class="nav-item">
+            <a class="nav-link" href='mailto:kaci.xie@yale.edu'
+              style="color: rgba(249, 248, 190, 1);text-decoration-line:none">Contact Us</a>
+          </li>
+          
+
+        {% if current_user.Name|length == 0 %}
+
+        <li class="nav-item">
+          <a class="nav-link" href="login" style="color: rgba(249, 248, 190, 1);text-decoration-line:none">Login</a>
+        </li>
+
+        {% else %}
+
+        <li class="nav-item">
+          <a class="nav-link" href="logout" style="color: rgba(249, 248, 190, 1);text-decoration-line:none">Log out of
+            {{ current_user.Name }}</a>
+        </li>
+
+        {% endif %}
+
+      </ul>
+    </div>
+  </div>
+</nav>

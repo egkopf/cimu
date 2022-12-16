@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Tailors</title>
+   <link rel="stylesheet" type="text/css" href="static/styles/root.css">
+   <link rel="stylesheet" type="text/css" href="static/styles/about.css">
+</head>
+<script>
+   function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+
+      for (var i = 0; i < reveals.length; i++) {
+         var windowHeight = window.innerHeight;
+         var elementTop = reveals[i].getBoundingClientRect().top;
+         var elementVisible = 150;
+
+         if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+         } else {
+            reveals[i].classList.remove("active");
+         }
+      }
+   }
+   window.addEventListener("scroll", reveal);
+</script>
+
+<body>
+   {% include 'Templates/navbar.html' %}
+   <div class="opening">
+      <p style="color:#F9F8BE;">
+         When Kaci was a child, most of her clothes were frilly, victorian-inspired hand-me-downs from her cousin that
+         were two sizes too big. Knowing that the clothes weren't going to help her blend in in suburban Georgia, Kaci
+         taught herself how to alter her clothes by watching YouTube videos. This childhood practice caused Kaci to
+         develop a strong interest in clothing utilization and ultimately led her to build Cimu.
+      </p>
+
+   </div>
+   <div class="content" style="background-color:white;">
+      <span class="title">
+         What We Do
+      </span>
+      <span class="rectangle reveal fade-bottom" style="background: #FFCAF1;">
+         <span class="text-content">
+            <h3 style="font-weight: bold;color:#C36BAB;"> Reduce Reverse Logistics </h3>
+            <p> Our alterations and network of tailors ensure that only clothes with issues that can't be solved with a
+               tailor end up in your returns pile. By reforming your returns process, we are reducing the number of
+               returns overall. </p>
+         </span>
+         <img src="static/images/about1.png">
+      </span>
+      <span class="rectangle reveal fade-bottom" style="background: #F9F8BE;">
+         <span class="text-content">
+            <h3 style="font-weight: bold;color:#CA9700;"> Improve Customer Experience </h3>
+            <p> Cimu can turn garments from something customers like into something customers love. By allowing your
+               customers to tailor their clothes to perfection, we're helping them feel more empowered and confident
+               wearing your apparel. Additionally, over time, we will be able to collect microdata from our alterations
+               that will better inform the manufacturing process.</p>
+         </span>
+         <img src="static/images/about2.png">
+      </span>
+      <span class="rectangle reveal fade-bottom" style="background: #C2FEAE;">
+         <span class="text-content">
+            <h3 style="font-weight: bold;color:#009900;"> Encourage Sustainability </h3>
+            <p> By making sure clothes successfully enter customers' closets, we're ensuring that clothes don't end up
+               in landfills. We are increasing clothing utilization and decreasing clothing waste. In doing so, we are
+               driving the heart of a circular economy.</p>
+         </span>
+         <img src="static/images/about3.png">
+      </span>
+      <span class="rectangle reveal fade-bottom" style="background: #A5D0A8;">
+         <span class="text-content">
+            <h3 style="font-weight: bold;color:#1E4621;"> Empower Local Communities</h3>
+            <p> Our network of tailors include traditional tailors and community members. Many community members don't
+               have the economic means to create a tailoring shop but have sewing capabilities that rival those with
+               storefronts. By employing former unhoused folks, refugees, and stay-at-home moms, we're empowering the local community through economic means.</p>
+         </span>
+         <img src="static/images/about4.png">
+      </span>
+   </div>
+</body>
+{% include 'Templates/footer.html' %}
+</html>
