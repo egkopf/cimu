@@ -1,0 +1,131 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    justify-content: center;
+    align-items: center;
+    padding:2%;
+    height:fit-content;
+
+    background: var(--everglade);
+    }
+
+.contact-us{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 0px;
+    gap: 44px;
+
+    /* width: 1267px;
+    height: 233px; */
+
+    animation: fade-bottom 2s;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.big-button{
+    box-sizing: border-box;
+    border: 10px solid var(--australian-mint);
+    border-radius: 50px;
+    padding: 18px 25px;
+
+    font-family: 'Halogen';
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--font-size-xxxl);
+    line-height: var(--font-size-xxxl);
+    color: var(--australian-mint);
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+
+h1{
+    align-self:center;
+    font-family:"Avenir";
+    font-weight: bold;
+    font-style: normal;
+    font-size: var(--font-size-xl);
+    line-height: var(--font-size-xl);
+    color: var(--australian-mint);
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5%;
+    width:100%;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    flex-wrap: wrap;
+}
+
+.logo-and-icons{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+
+}
+
+.icons-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5%;
+
+    flex: 50%;
+    order: 1;
+    flex-grow: 0;
+}
+
+.icons{
+    width: 50px;
+    height: 50px;
+}
+
+.bottom-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.newsletter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+    flex: none;
+    order: 2;
+    flex-grow: 1;
+    }
+
+a{
+    color: var(--australian-mint);
+    text-decoration-line: none;
+    }
+
+a:hover{
+    color:var(--green);
+    text-decoration-line: none;
+    }
+    

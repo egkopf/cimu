@@ -1,0 +1,362 @@
+/* Applies to the entire body of the HTML document (except where overridden by more specific
+selectors). */
+
+@font-face {
+  font-family: "Halogen";
+  src: url("Halogen/Halogen-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Halogen";
+  src: url("Halogen/Halogen-Oblique.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Halogen";
+  src: url("Halogen/Halogen-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Halogen";
+  src: url("Halogen/Halogen-BoldOblique.otf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("Avenir/Avenir-Black-03.ttf");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("Avenir/Avenir-BlackOblique-04.ttf");
+  font-weight: bolder;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("Avenir/Avenir-Book-01.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("Avenir/Avenir-BookOblique-02.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("Avenir/Avenir-Heavy-05.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("Avenir/Avenir-HeavyOblique-06.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+:root {
+  --black:
+rgba(0, 0, 0, 1);
+  --everglade:#1E4621;
+  --australian-mint:
+rgba(249, 248, 190, 1);
+  --white:
+rgba(255, 255, 255, 1);
+
+--yellow:#FFCC33;
+--light-yellow:#F9F8BE;
+--dark-yellow:#CA9700;
+
+--green: #009900;
+--light-green:#C2FEAE;
+
+  --font-size-m: 20px;
+  --font-size-l: 24px;
+  --font-size-xl: 48px;
+  --font-size-xxl: 72px;
+  --font-size-xxxl: 96px;
+  --font-size-max: 115px;
+}
+
+::selection {
+  background-color: var(--green);
+  color: #fff;
+  text-shadow: none;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+h1{
+  font-family: "Avenir";
+  color:var(--everglade);
+  font-style: normal;
+  font-weight: bolder;
+  font-size: var(--font-size-xl);
+  line-height: 68px;
+  display: flex;
+  align-items: flex-start;
+  animation: fade-bottom 1s;
+}
+
+p{
+  font-family:"Avenir";
+  color: var(--everglade);
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--font-size-m);
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+
+}
+
+label{
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: bold;
+  font-size: var(--font-size-m)
+  line-height: 30px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  color: var(--everglade)
+}
+
+input{
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--font-size-m);
+  line-height: 30px;
+  color: var(--everglade);
+  margin:5px;
+  padding:10px;
+  width:100%;
+
+  background: var(--light-green);
+  border: 1px solid var(--everglade);
+  border-radius: 10px;
+}
+
+submit{
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: bold;
+  font-size: var(--font-size-m);
+  line-height: 30px;
+  text-align: center;
+  color: var(--light-green);
+  margin:5px;
+  padding:10px;
+  width:100%;
+
+  background: var(--green);
+  border: 1px solid var(--everglade);
+  border-radius: 10px;
+}
+
+submit:hover{
+  color: var(--green);
+  background: var(--light-green);
+}
+
+
+form{
+  width:100%;
+  height:max-content;
+  align-content: center;
+}
+
+button{
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 10px;
+
+
+
+  background: var(--everglade);
+  border-radius: 10px;
+  border: 1px solid var(--green);
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--font-size-l);
+  line-height: 33px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+
+  color: var(--light-yellow);
+}
+
+button:hover{
+  background-color: var(--green);
+
+  color: var(--light-yellow);
+}
+
+.button{
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 10px;
+
+  width: 226px;
+  height: 49px;
+
+
+  background: var(--everglade);
+  border-radius: 10px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.button:hover{
+  background: var(--green);
+}
+
+.button-text{
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: bold;
+  font-size: var(--font-size-l);
+  line-height: 33px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+
+  color: var(--light-yellow);
+}
+
+.button-text:hover{
+  color:var(--everglade);
+}
+
+a{
+  color: var(--green);
+  text-decoration-line: none;
+}
+a:hover{
+  color:var(--light-yellow);
+  text-decoration-line: none;
+}
+
+/* movement */
+.reveal {
+  position: relative;
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+.active.fade-left {
+  animation: fade-left 1s ease-in;
+}
+.active.fade-right {
+  animation: fade-right 1s ease-in;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.login-button{
+    background-color: #fff;
+}
+
+.title{
+  font-family: 'Halogen';
+  font-style: normal;
+  font-weight: bold;
+  color: var(--everglade);
+  font-size: var(--font-size-xxl);
+  /* line-height: 150px; */
+  animation: fade 2s;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 5% 15%;
+  gap: 5rem;
+}

@@ -1,0 +1,55 @@
+.opening{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 20%;
+  height:500px;
+  min-height:120px;
+  background-color: var(--everglade);
+
+}
+
+.rectangle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5%;
+    gap: 2%;
+    border-radius: 20px;
+    height:fit-content;
+}
+
+.text-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 80px;
+}
+
+h3{
+    font-family: "Avenir";
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--font-size-l);
+    display: flex;
+    align-items: center;
+}
+
+p{
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--font-size-m);
+  display: flex;
+  align-items: flex-end;
+  animation: fade 1s;
+}
+
+img{
+  height:auto;
+  max-width:50%;
+}

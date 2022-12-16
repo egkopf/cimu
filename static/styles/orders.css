@@ -1,0 +1,69 @@
+.greeting{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 5%;
+  gap: 5rem;
+}
+
+table{
+  font-family:"Avenir";
+  font-style:normal;
+}
+
+thead{
+  font-weight:bold;
+}
+
+/* tr:hover{
+  background-color:var(--light-green);
+} */
+
+.row{
+  display:flex;
+  padding: 3%;
+  margin-bottom: 2%;
+  border: 3px solid var(--green);
+  border-radius: 50px;
+  gap: 10%;
+  height:fit-content;
+  animation: fade-bottom 2s;
+  justify-content: space-between;
+}
+
+h3{
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: bolder;
+  font-size: var(--font-size-l);
+  color:var(--green);
+  display: flex;
+  align-items: center;
+}
+
+.tailor-info{
+  display: flex;
+  align-items: flex-start;
+  flex-direction:column;
+}
+.tailor-info2{
+  display: flex;
+  align-items: left;
+  flex-direction:row;
+}
+
+.table{
+  display:flex;
+  flex-direction:column;
+  width: fit-content;
+  gap: 10%;
+}
+
+button{
+  background-color:var(--light-yellow);
+}
+
+button:hover{
+  background-color:var(--green);
+}
