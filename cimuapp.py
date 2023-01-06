@@ -319,3 +319,6 @@ def orders():
             response = make_response(html)
             return response
 
+
+if __name__ == '__main__':
+    app.run()
