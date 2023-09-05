@@ -116,7 +116,7 @@ submit{
     justify-content: center;
     align-items: center;
     padding: 8px 25px;
-    border: 1px solid var(--green);
+    border: none;
     border-radius: 10px;
     background-color: var(--green);
     font-family: 'Avenir';
