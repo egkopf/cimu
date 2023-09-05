@@ -8,9 +8,9 @@
     height:fit-content;
 
     background: var(--everglade);
-    }
+}
 
-.contact-us{
+footer .contact-us{
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -26,7 +26,7 @@
     flex-grow: 0;
 }
 
-.big-button{
+footer .big-button{
     box-sizing: border-box;
     border: 10px solid var(--australian-mint);
     border-radius: 50px;
@@ -45,8 +45,7 @@
 }
 
 
-h1{
-    align-self:center;
+footer h1{
     font-family:"Avenir";
     font-weight: bold;
     font-style: normal;
@@ -55,7 +54,7 @@ h1{
     color: var(--australian-mint);
 }
 
-.bottom{
+footer .bottom{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -69,14 +68,14 @@ h1{
     flex-wrap: wrap;
 }
 
-.logo-and-icons{
+footer .logo-and-icons{
     display: flex;
     flex-direction: column;
     padding: 0px;
 
 }
 
-.icons-row{
+footer .icons-row{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -88,12 +87,12 @@ h1{
     flex-grow: 0;
 }
 
-.icons{
+footer .icons{
     width: 50px;
     height: 50px;
 }
 
-.bottom-menu{
+footer .bottom-menu{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,7 +106,7 @@ h1{
     flex-grow: 0;
 }
 
-.newsletter{
+footer .newsletter{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,12 +118,12 @@ h1{
     flex-grow: 1;
     }
 
-a{
+footer a{
     color: var(--australian-mint);
     text-decoration-line: none;
     }
 
-a:hover{
+footer a:hover{
     color:var(--green);
     text-decoration-line: none;
     }
